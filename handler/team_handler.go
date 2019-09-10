@@ -90,7 +90,7 @@ func CreateTeamPost(w http.ResponseWriter, r *http.Request) {
 	isci := false
 	uids := make([]int64, 0)
 	for _, u := range uidSlice {
-		if u == "" {
+		if u == "" || u == "admin" {
 			continue
 		}
 		uid, err := strconv.ParseInt(u, 10, 64)
